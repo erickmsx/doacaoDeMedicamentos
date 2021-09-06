@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <View
+        android:id="@+id/containerComponents"
+        style="@style/ContainerComponents"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogin"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openHome"
+        android:text="Entrar"
+        app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+        app:layout_constraintStart_toStartOf="@+id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@+id/fieldPasswordLogin" />
+
+    <EditText
+        android:id="@+id/fieldEmailLogin"
+        style="@style/Edit_Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+        app:layout_constraintStart_toStartOf="@+id/containerComponents"
+        app:layout_constraintTop_toTopOf="@+id/containerComponents" />
+
+    <EditText
+        android:id="@+id/fieldPasswordLogin"
+        style="@style/Edit_Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+        app:layout_constraintStart_toStartOf="@+id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@+id/fieldEmailLogin" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerComponents" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:onClick="openUserRegister"
+        android:text="Crie uma conta clicando aqui"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

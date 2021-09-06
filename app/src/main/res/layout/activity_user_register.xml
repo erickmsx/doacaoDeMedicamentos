@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".activity.UserRegisterActivity">
+
+
+    <View
+        android:id="@+id/view2"
+        style="@style/ContainerComponents"
+        android:layout_width="370dp"
+        android:layout_height="263dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/fieldPasswordReg"
+        style="@style/Edit_Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_eye"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/fieldEmailReg" />
+
+    <EditText
+        android:id="@+id/fieldNameReg"
+        style="@style/Edit_Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <EditText
+        android:id="@+id/fieldEmailReg"
+        style="@style/Edit_Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_email"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/fieldNameReg" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Cadastre-se"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonRegister"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Cadastrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

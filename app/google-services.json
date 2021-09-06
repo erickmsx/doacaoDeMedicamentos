@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "529388036985",
+    "project_id": "doacaodemedicamentos-5ab06",
+    "storage_bucket": "doacaodemedicamentos-5ab06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529388036985:android:052b7bf253d3d08621c5a8",
+        "android_client_info": {
+          "package_name": "com.erickmxav.doacaodemedicamentos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529388036985-534581rguqmtd5tth7q500v4c1tuk82a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8gkgVmbiUPJzeXWA6fiviCVUQwPcMHcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529388036985-534581rguqmtd5tth7q500v4c1tuk82a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
