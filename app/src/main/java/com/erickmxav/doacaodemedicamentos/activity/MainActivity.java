@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar( toolbar );
 
         authentication = FirebaseConfig.getAuthenticationFirebase();
-
-
     }
 
     @Override

@@ -14,15 +14,15 @@ public class User {
     public User() {
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void save(){
         DatabaseReference firebase = FirebaseConfig.getFirebaseDatabase();
         firebase.child("usuarios")
                 .child( this.idUser )
                 .setValue( this );
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Exclude

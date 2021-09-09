@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button buttonLogin;
     private User user;
     private FirebaseAuth authentication;
+    private String adminLogin = "admin@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +46,28 @@ public class LoginActivity extends AppCompatActivity {
                 String textPassword = inputPasswordLogin.getText().toString();
 
                 if (!textEmail.isEmpty()) {
-                    if (!textPassword.isEmpty()) {
+                    if (!textEmail.equals(adminLogin)) {
+                        if (!textPassword.isEmpty()) {
+                            user = new User();
+                            user.setEmail(textEmail);
+                            user.setPassword(textPassword);
+
+                            validateLogin();
+
+                        } else {
+                            Toast.makeText(LoginActivity.this,
+                                    "Preencha a senha",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
+                    }else{
+
                         user = new User();
                         user.setEmail(textEmail);
                         user.setPassword(textPassword);
-                        validateLogIn();
 
-                    } else {
-                        Toast.makeText(LoginActivity.this,
-                                "Preencha a senha",
-                                Toast.LENGTH_SHORT).show();
+                        validateLoginAdmin();
+
                     }
                 } else {
                     Toast.makeText(LoginActivity.this,
@@ -65,7 +78,48 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void validateLogIn() {
+    public void validateLoginAdmin(){
+
+        authentication = FirebaseConfig.getAuthenticationFirebase();
+        authentication.signInWithEmailAndPassword(
+                user.getEmail(),
+                user.getPassword()
+        ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+
+                    Toast.makeText(LoginActivity.this,
+                            "Sucesso ao fazer login",
+                            Toast.LENGTH_SHORT).show();
+
+                    openAdminHome();
+
+                } else {
+                    String exception = "";
+                    try {
+                        throw task.getException();
+
+                    } catch (FirebaseAuthInvalidUserException e) {
+                        exception = "Usuário não está cadastrado";
+
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
+                        exception = "E-mail ou senha não correspondem a um usuário cadastrado";
+
+                    } catch (Exception e) {
+                        exception = "Erro ao cadastrar usuário: " + e.getMessage();
+                        e.printStackTrace();
+                    }
+
+                    Toast.makeText(LoginActivity.this,
+                            exception,
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    public void validateLogin() {
         authentication = FirebaseConfig.getAuthenticationFirebase();
         authentication.signInWithEmailAndPassword(
                 user.getEmail(),
@@ -105,34 +159,41 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void verifyUserLogged(){
+    public void verifyUserLogged() {
 
         authentication = FirebaseConfig.getAuthenticationFirebase();
 
-        if( authentication.getCurrentUser() != null ){
+        if (authentication.getCurrentUser() != null) {
+            if (authentication.getCurrentUser().getEmail().contains(adminLogin)) {
 
-            openHome();
+                openAdminHome();
 
-            //authentication.signOut();
+            }else {
+                openHome();
+            }
         }
     }
+        public void openHome() {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
 
-    public void openHome() {
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
-    }
+        public void openAdminHome() {
+            startActivity(new Intent(this, AdminActivity.class));
+            finish();
+        }
 
-    public void openHome(View view) {
-        startActivity(new Intent(this, MainActivity.class));
-    }
+        public void openHome(View view) {
+            startActivity(new Intent(this, MainActivity.class));
+        }
 
-    public void openUserRegister(View view) {
-        startActivity(new Intent(this, UserRegisterActivity.class));
-    }
+        public void openUserRegister(View view) {
+            startActivity(new Intent(this, UserRegisterActivity.class));
+        }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        verifyUserLogged();
+        @Override
+        protected void onStart() {
+            super.onStart();
+            verifyUserLogged();
+        }
     }
-}
