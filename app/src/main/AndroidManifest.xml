@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoacaoDeMedicamentos">
         <activity
+            android:name=".activity.RegisterMedicine"
+            android:exported="true" />
+        <activity
             android:name=".activity.AdminActivity"
             android:exported="true" />
         <activity

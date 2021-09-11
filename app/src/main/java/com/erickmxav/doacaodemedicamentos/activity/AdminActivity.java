@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.erickmxav.doacaodemedicamentos.R;
 import com.erickmxav.doacaodemedicamentos.config.FirebaseConfig;
@@ -51,5 +52,9 @@ public class AdminActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openRegisterMedicine(View view) {
+        startActivity(new Intent(this, RegisterMedicine.class));
     }
 }
