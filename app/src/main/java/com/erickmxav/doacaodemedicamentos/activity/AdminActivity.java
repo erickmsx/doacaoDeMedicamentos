@@ -55,6 +55,10 @@ public class AdminActivity extends AppCompatActivity {
     }
 
     public void openRegisterMedicine(View view) {
-        startActivity(new Intent(this, RegisterMedicine.class));
+        startActivity(new Intent(this, MedicineRegister.class));
+    }
+
+    public void openMedicineList(View view) {
+        startActivity(new Intent(this, ListMedicinesActivity.class));
     }
 }

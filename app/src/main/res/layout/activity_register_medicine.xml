@@ -5,26 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".activity.RegisterMedicine">
+    tools:context=".activity.MedicineRegister">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button5"
+        android:id="@+id/registerPet"
         style="@style/Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:gravity="center"
+        android:onClick="registerMedicine"
         android:text="CADASTRAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/editValidity"
         app:layout_constraintVertical_bias="0.0" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imageMedic"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_marginTop="80dp"
         android:src="@drawable/medicine"
         app:civ_border_color="@color/black"
@@ -34,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editName"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
@@ -49,10 +50,10 @@
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintTop_toBottomOf="@+id/addImageMedic" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editCategory"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
@@ -67,10 +68,10 @@
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editValidity"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
@@ -85,10 +86,10 @@
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/editCategory" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/addImageMedic"
         android:layout_width="wrap_content"
         android:textAllCaps="false"
         android:layout_height="wrap_content"
@@ -98,6 +99,6 @@
         app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageMedic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,13 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/drawable/background.xml" value="0.1953125" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/drawable/bottom_sheet_background.xml" value="0.1953125" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/drawable/button.xml" value="0.1953125" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/drawable/container_components.xml" value="0.1953125" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/drawable/edit_text_shape.xml" value="0.1953125" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_admin.xml" value="0.25" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_list_medications.xml" value="0.14492753623188406" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_list_medicines.xml" value="0.14492753623188406" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_register_medicine.xml" value="0.33" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_medicines_description.xml" value="0.25" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_medicines_list.xml" value="0.1403985507246377" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_register_medicine.xml" value="0.25" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_user_data.xml" value="0.1308876811594203" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_user_register.xml" value="0.15353260869565216" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/adapter_medicine.xml" value="0.33" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.21" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/menu/main_menu.xml" value="0.17916666666666667" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/menu/menu_main.xml" value="0.17916666666666667" />

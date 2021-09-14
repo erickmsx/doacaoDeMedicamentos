@@ -1,13 +1,34 @@
 package com.erickmxav.doacaodemedicamentos.model;
 
-public class Medicine {
+import com.erickmxav.doacaodemedicamentos.config.FirebaseConfig;
+import com.erickmxav.doacaodemedicamentos.helper.Base64Custom;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+
+import java.io.Serializable;
+
+public class Medicine implements Serializable {
 
     private String name;
     private String category;
-    private String photo;
     private String validity;
+    private String photo;
 
     public Medicine() {
+    }
+
+    public void RegisterMedicine (){
+
+        //método pra pegar o email do usuário que está logado e codificar pra ser usado
+        //no idUsuario do firebase
+        FirebaseAuth authentication = FirebaseConfig.getAuthenticationFirebase();
+        String idUser = Base64Custom.codifyBase64( authentication.getCurrentUser().getEmail() );
+
+        DatabaseReference firebase = FirebaseConfig.getFirebaseDatabase();
+        firebase.child("medicines")
+                .child( idUser )
+                .push()
+                .setValue( this );
     }
 
     public String getName() {
