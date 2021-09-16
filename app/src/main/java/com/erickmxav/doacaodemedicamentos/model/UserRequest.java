@@ -7,7 +7,7 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.io.Serializable;
 
-public class UserData implements Serializable {
+public class UserRequest implements Serializable {
 
     private String name;
     private String birthDate;
@@ -15,19 +15,13 @@ public class UserData implements Serializable {
     private String adress;
     private String imageProfile;
 
-    public UserData() {
+    public UserRequest() {
     }
 
-    public void registerUserData(){
-
-        //método pra pegar o email do usuário que está logado e codificar pra ser usado
-        //no idUsuario do firebase
-        FirebaseAuth authentication = FirebaseConfig.getAuthenticationFirebase();
-        String idUser = Base64Custom.codifyBase64( authentication.getCurrentUser().getEmail() );
+    public void registerUserRequest(){
 
         DatabaseReference firebase = FirebaseConfig.getFirebaseDatabase();
-        firebase.child("userData")
-                .child( idUser )
+        firebase.child("userRequest")
                 .push()
                 .setValue( this );
     }

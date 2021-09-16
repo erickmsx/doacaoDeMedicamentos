@@ -61,4 +61,8 @@ public class AdminActivity extends AppCompatActivity {
     public void openListMedicine(View view) {
         startActivity(new Intent(this, ListMedicinesActivity.class));
     }
+
+    public void openUserRequestList(View view) {
+        startActivity(new Intent(this, ListUserRequestActivity.class));
+    }
 }

@@ -25,16 +25,16 @@ public class MedicinesDescriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicines_description);
 
-        textNameDescription = findViewById(R.id.textNameDesc);
+        textNameDescription = findViewById(R.id.textNameURDescription);
         textCategoryDescription = findViewById(R.id.textCategoryDesc);
-        textValidityDescription = findViewById(R.id.textValidityDesc);
-        imageMedicineDescription = findViewById(R.id.imageMedicineDesc);
+        textValidityDescription = findViewById(R.id.textBirthDateURDesc);
+        imageMedicineDescription = findViewById(R.id.imageProfileURDesc);
 
         //Recover data pets
         Bundle bundle = getIntent().getExtras();
         if ( bundle != null ){
 
-            medicineDescription = ( Medicine ) bundle.getSerializable("medicinesDescription");
+            medicineDescription = (Medicine) bundle.getSerializable("medicinesDescription");
             textNameDescription.setText( medicineDescription.getName() );
             textCategoryDescription.setText( medicineDescription.getCategory() );
             textValidityDescription.setText( medicineDescription.getValidity() );

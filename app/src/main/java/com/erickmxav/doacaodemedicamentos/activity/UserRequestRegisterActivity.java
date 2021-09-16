@@ -24,7 +24,7 @@ import com.erickmxav.doacaodemedicamentos.R;
 import com.erickmxav.doacaodemedicamentos.config.FirebaseConfig;
 import com.erickmxav.doacaodemedicamentos.helper.Permission;
 import com.erickmxav.doacaodemedicamentos.helper.UserFirebase;
-import com.erickmxav.doacaodemedicamentos.model.UserData;
+import com.erickmxav.doacaodemedicamentos.model.UserRequest;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -40,7 +40,7 @@ import java.io.ByteArrayOutputStream;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UserDataActivity extends AppCompatActivity {
+public class UserRequestRegisterActivity extends AppCompatActivity {
 
     private TextView mTextView; //bottomsheet
     private static final int SELECTION_CAMERA  = 100;
@@ -55,7 +55,7 @@ public class UserDataActivity extends AppCompatActivity {
     private Button addImageProfUd;
     private Button chooseCamera;
     private Button chooseGallery;
-    private UserData userData;
+    private UserRequest userData;
     private Uri urlImage;
     private String userId;
 
@@ -66,7 +66,7 @@ public class UserDataActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_data);
+        setContentView(R.layout.activity_register_user_request);
 
         //Validation permissions
         Permission.validatePermissions(permissoesNecessarias, this, 1);
@@ -94,7 +94,7 @@ public class UserDataActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                        UserDataActivity.this, R.style.BottomSheetTheme
+                        UserRequestRegisterActivity.this, R.style.BottomSheetTheme
                 );
                 View bottomSheetView = LayoutInflater.from(getApplicationContext())
                         .inflate(
@@ -166,7 +166,7 @@ public class UserDataActivity extends AppCompatActivity {
                     uploadTask.addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(UserDataActivity.this,
+                            Toast.makeText(UserRequestRegisterActivity.this,
                                     "Erro ao fazer upload da imagem",
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -182,7 +182,7 @@ public class UserDataActivity extends AppCompatActivity {
                                 }
                             });
 
-                            Toast.makeText(UserDataActivity.this,
+                            Toast.makeText(UserRequestRegisterActivity.this,
                                     "Sucesso ao fazer upload da imagem",
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -201,16 +201,16 @@ public class UserDataActivity extends AppCompatActivity {
     //Register medicine
     public void registerMedicine(View view){
 
-        userData = new UserData();
+        userData = new UserRequest();
         userData.setName( fieldNameUd.getText().toString() );
         userData.setBirthDate( fieldBirthDateUd.getText().toString() );
         userData.setCpf( fieldCpfUd.getText().toString() );
         userData.setAdress( fieldAdressUd.getText().toString() );
         userData.setImageProfile( urlImage.toString());
 
-        userData.registerUserData();
+        userData.registerUserRequest();
 
-        Toast.makeText(UserDataActivity.this,
+        Toast.makeText(UserRequestRegisterActivity.this,
                 "Sucesso ao cadastrar medicamento",
                 Toast.LENGTH_SHORT).show();
         finish();

@@ -20,7 +20,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoacaoDeMedicamentos">
         <activity
-            android:name=".activity.UserDataActivity"
+            android:name=".activity.UsersRequestDescriptionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ListUserRequestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.UserRequestRegisterActivity"
             android:exported="true" />
         <activity
             android:name=".activity.MedicinesDescriptionActivity"

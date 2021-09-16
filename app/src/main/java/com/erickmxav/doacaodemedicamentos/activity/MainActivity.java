@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openUserData(View view) {
-        startActivity(new Intent(this, UserDataActivity.class));
+        startActivity(new Intent(this, UserRequestRegisterActivity.class));
     }
 
     public void openListMedicines(View view) {

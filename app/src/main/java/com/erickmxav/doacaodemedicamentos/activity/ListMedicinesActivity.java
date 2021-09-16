@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.erickmxav.doacaodemedicamentos.R;
 import com.erickmxav.doacaodemedicamentos.adapter.AdapterMedicine;
 import com.erickmxav.doacaodemedicamentos.config.FirebaseConfig;
-import com.erickmxav.doacaodemedicamentos.helper.Base64Custom;
 import com.erickmxav.doacaodemedicamentos.helper.RecyclerItemClickListener;
 import com.erickmxav.doacaodemedicamentos.model.Medicine;
 import com.google.firebase.auth.FirebaseAuth;
