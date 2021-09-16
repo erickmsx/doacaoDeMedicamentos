@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:onClick="openUserData"
     tools:context=".activity.MainActivity">
 
     <include
@@ -44,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:gravity="center"
+        android:onClick="openUserData"
         android:text="CADASTRAR MEUS DADOS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +57,7 @@
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:onClick="openListMedicines"
         android:text="REMÉDIOS DISPONÍVEIS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

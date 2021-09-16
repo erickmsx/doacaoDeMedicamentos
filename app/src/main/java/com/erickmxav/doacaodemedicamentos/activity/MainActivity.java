@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,9 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.erickmxav.doacaodemedicamentos.R;
 import com.erickmxav.doacaodemedicamentos.config.FirebaseConfig;
-import com.erickmxav.doacaodemedicamentos.helper.UserFirebase;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,5 +52,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openUserData(View view) {
+        startActivity(new Intent(this, UserDataActivity.class));
+    }
+
+    public void openListMedicines(View view) {
+        startActivity(new Intent(this, ListMedicinesActivity.class));
     }
 }

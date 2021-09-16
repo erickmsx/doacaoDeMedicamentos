@@ -17,16 +17,10 @@ public class Medicine implements Serializable {
     public Medicine() {
     }
 
-    public void RegisterMedicine (){
-
-        //método pra pegar o email do usuário que está logado e codificar pra ser usado
-        //no idUsuario do firebase
-        FirebaseAuth authentication = FirebaseConfig.getAuthenticationFirebase();
-        String idUser = Base64Custom.codifyBase64( authentication.getCurrentUser().getEmail() );
+    public void registerMedicine(){
 
         DatabaseReference firebase = FirebaseConfig.getFirebaseDatabase();
         firebase.child("medicines")
-                .child( idUser )
                 .push()
                 .setValue( this );
     }

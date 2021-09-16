@@ -84,10 +84,7 @@ public class ListMedicinesActivity extends AppCompatActivity {
 
     public void recoverMedicines(){
 
-        String userEmail = authentication.getCurrentUser().getEmail();
-        String idUser = Base64Custom.codifyBase64( userEmail );
-        medicineRef = firebaseRef.child("medicines")
-                .child( idUser );
+        medicineRef = firebaseRef.child("medicines");
 
         valueEventListenerUser = medicineRef.addValueEventListener(new ValueEventListener() {
             @Override

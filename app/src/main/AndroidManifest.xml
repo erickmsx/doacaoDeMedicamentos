@@ -29,7 +29,7 @@
             android:name=".activity.ListMedicinesActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.MedicineRegister"
+            android:name=".activity.MedicineRegisterActivity"
             android:exported="true" />
         <activity
             android:name=".activity.AdminActivity"
