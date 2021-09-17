@@ -13,6 +13,8 @@ public class UserRequest implements Serializable {
     private String birthDate;
     private String cpf;
     private String adress;
+    private String phone;
+    private String medicine;
     private String imageProfile;
 
     public UserRequest() {
@@ -56,6 +58,22 @@ public class UserRequest implements Serializable {
 
     public void setAdress(String adress) {
         this.adress = adress;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getMedicine() {
+        return medicine;
+    }
+
+    public void setMedicine(String medicine) {
+        this.medicine = medicine;
     }
 
     public String getImageProfile() {

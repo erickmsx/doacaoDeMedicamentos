@@ -40,9 +40,7 @@ public class AdapterUserRequest extends RecyclerView.Adapter<AdapterUserRequest.
     public void onBindViewHolder(AdapterUserRequest.MyViewHolder holder, int position) {
         UserRequest userRequest = userRequests.get(position);
         holder.name.setText(userRequest.getName());
-        holder.birthDate.setText(userRequest.getBirthDate());
-        holder.cpf.setText(userRequest.getCpf());
-        holder.address.setText(userRequest.getAdress());
+        holder.medicine.setText(userRequest.getMedicine());
 
         if(userRequest.getImageProfile() != null){
             Uri uri = Uri.parse(userRequest.getImageProfile());
@@ -64,16 +62,14 @@ public class AdapterUserRequest extends RecyclerView.Adapter<AdapterUserRequest.
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView name, birthDate, cpf, address;
+        TextView name, medicine;
         CircleImageView photo;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.textAdapterNameReq);
-            birthDate = itemView.findViewById(R.id.textAdapterBirthDateReq);
-            cpf = itemView.findViewById(R.id.textAdapterCpfReq);
-            address = itemView.findViewById(R.id.textAdapterAddressReq);
+            medicine = itemView.findViewById(R.id.textAdapterMedicineReq);
             photo = itemView.findViewById(R.id.photoUserProfileAdapterReq);
         }
     }

@@ -17,7 +17,7 @@
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_medicines_description.xml" value="0.25" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_medicines_list.xml" value="0.1403985507246377" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_register_medicine.xml" value="0.25" />
-        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_register_user_request.xml" value="0.13134057971014493" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_register_user_request.xml" value="0.19" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_teste.xml" value="0.13632246376811594" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_teste_dois.xml" value="0.13632246376811594" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_user_d_info.xml" value="0.13134057971014493" />
@@ -25,7 +25,7 @@
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_user_register.xml" value="0.15353260869565216" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_user_request.xml" value="0.13134057971014493" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_user_request_description.xml" value="0.13134057971014493" />
-        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_users_request_description.xml" value="0.25" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_users_request_description.xml" value="0.2" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_users_request_list.xml" value="0.13134057971014493" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/adapter_medicine.xml" value="0.22" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/adapter_user_request.xml" value="0.22" />

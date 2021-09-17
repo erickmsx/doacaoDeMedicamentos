@@ -12,20 +12,21 @@
         style="@style/Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:gravity="center"
         android:onClick="registerMedicine"
         android:text="CADASTRAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editAdressUd"
+        app:layout_constraintTop_toBottomOf="@+id/editPhoneUd"
         app:layout_constraintVertical_bias="0.0" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageProfUd"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/profile"
         app:civ_border_color="@color/black"
         app:civ_border_width="3dp"
@@ -89,6 +90,42 @@
         app:layout_constraintTop_toBottomOf="@+id/editBirthDateUd" />
 
     <EditText
+        android:id="@+id/editMedicineUd"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Remédio desejado"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editAdressUd" />
+
+    <EditText
+        android:id="@+id/editPhoneUd"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Telefone"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editMedicineUd" />
+
+    <EditText
         android:id="@+id/editAdressUd"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -110,10 +147,10 @@
     <Button
         android:id="@+id/addImageProfileUd"
         android:layout_width="wrap_content"
-        android:textAllCaps="false"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Adicionar foto"
+        android:textAllCaps="false"
         android:textSize="18sp"
         app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"

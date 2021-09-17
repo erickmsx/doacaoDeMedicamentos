@@ -8,17 +8,14 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.erickmxav.doacaodemedicamentos.R;
-import com.erickmxav.doacaodemedicamentos.model.Medicine;
 import com.erickmxav.doacaodemedicamentos.model.UserRequest;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UsersRequestDescriptionActivity extends AppCompatActivity {
 
-    private TextView textNameDesc;
-    private TextView textBirthDateDesc;
-    private TextView textCpfDesc;
-    private TextView textAddressDesc;
+    private TextView textNameDesc, textBirthDateDesc, textCpfDesc,
+                        textAddressDesc, textPhoneDesc, textMedicineDesc;
     private CircleImageView imageProfDesc;
     private UserRequest userRequestDescription;
 
@@ -31,6 +28,8 @@ public class UsersRequestDescriptionActivity extends AppCompatActivity {
         textBirthDateDesc = findViewById(R.id.textBirthDateURDesc);
         textCpfDesc = findViewById(R.id.textCpfURDescription);
         textAddressDesc = findViewById(R.id.textAdressURDescription);
+        textPhoneDesc = findViewById(R.id.textPhoneURDescription);
+        textMedicineDesc = findViewById(R.id.textMedicineURDescription);
         imageProfDesc = findViewById(R.id.imageProfileURDesc);
 
         //Recover data pets
@@ -42,6 +41,8 @@ public class UsersRequestDescriptionActivity extends AppCompatActivity {
             textBirthDateDesc.setText(userRequestDescription.getBirthDate());
             textCpfDesc.setText(userRequestDescription.getCpf());
             textAddressDesc.setText(userRequestDescription.getAdress());
+            textPhoneDesc.setText(userRequestDescription.getPhone());
+            textMedicineDesc.setText(userRequestDescription.getMedicine());
 
             String photo = userRequestDescription.getImageProfile();
             if (photo != null) {

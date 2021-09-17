@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="16dp"
     android:orientation="horizontal">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -27,30 +28,15 @@
             android:layout_height="wrap_content"
             android:text="Nome"
             android:textColor="@color/white"
-            android:textSize="26sp" />
+            android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/textAdapterBirthDateReq"
+            android:id="@+id/textAdapterMedicineReq"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Data de Nascimento"
+            android:text="Medicine"
             android:textColor="@color/white"
-            android:textSize="26sp" />
+            android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/textAdapterCpfReq"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CPF"
-            android:textColor="@color/white"
-            android:textSize="26sp" />
-
-        <TextView
-            android:id="@+id/textAdapterAddressReq"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Endereço"
-            android:textColor="@color/white"
-            android:textSize="26sp" />
     </LinearLayout>
 </LinearLayout>

@@ -50,7 +50,8 @@ public class UserRequestRegisterActivity extends AppCompatActivity {
             Manifest.permission.CAMERA
     };
 
-    private EditText fieldNameUd, fieldBirthDateUd, fieldCpfUd, fieldAdressUd;
+    private EditText fieldNameUd, fieldBirthDateUd,
+                        fieldCpfUd, fieldAdressUd, fieldPhoneUd, fieldMedicineUd;
     private CircleImageView imageProfUd;
     private Button addImageProfUd;
     private Button chooseCamera;
@@ -78,6 +79,8 @@ public class UserRequestRegisterActivity extends AppCompatActivity {
         fieldBirthDateUd = findViewById(R.id.editBirthDateUd);
         fieldCpfUd = findViewById(R.id.editCpfUd);
         fieldAdressUd = findViewById(R.id.editAdressUd);
+        fieldPhoneUd = findViewById(R.id.editPhoneUd);
+        fieldMedicineUd = findViewById(R.id.editMedicineUd);
 
         imageProfUd = findViewById(R.id.imageProfUd);
         addImageProfUd = findViewById(R.id.addImageProfileUd);
@@ -206,12 +209,15 @@ public class UserRequestRegisterActivity extends AppCompatActivity {
         userData.setBirthDate( fieldBirthDateUd.getText().toString() );
         userData.setCpf( fieldCpfUd.getText().toString() );
         userData.setAdress( fieldAdressUd.getText().toString() );
+        userData.setPhone( fieldPhoneUd.getText().toString() );
+        userData.setMedicine( fieldMedicineUd.getText().toString() );
+
         userData.setImageProfile( urlImage.toString());
 
         userData.registerUserRequest();
 
         Toast.makeText(UserRequestRegisterActivity.this,
-                "Sucesso ao cadastrar medicamento",
+                "Cadastro efetuado com sucesso",
                 Toast.LENGTH_SHORT).show();
         finish();
     }
