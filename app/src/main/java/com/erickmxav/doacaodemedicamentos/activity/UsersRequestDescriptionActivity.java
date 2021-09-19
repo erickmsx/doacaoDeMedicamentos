@@ -32,7 +32,7 @@ public class UsersRequestDescriptionActivity extends AppCompatActivity {
         textMedicineDesc = findViewById(R.id.textMedicineURDescription);
         imageProfDesc = findViewById(R.id.imageProfileURDesc);
 
-        //Recover data pets
+        //Recover data user request
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
 

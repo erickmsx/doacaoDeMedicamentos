@@ -28,12 +28,13 @@ public class ListMedicinesActivity extends AppCompatActivity {
     private FirebaseAuth authentication = FirebaseConfig.getAuthenticationFirebase();
     private DatabaseReference firebaseRef = FirebaseConfig.getFirebaseDatabase();
     private DatabaseReference userRef;
+    private DatabaseReference medicineRef;
 
     private RecyclerView recyclerListMedicines;
     private AdapterMedicine adapter;
     private List<Medicine> medicinesList = new ArrayList<>();
+
     private Medicine medicine;
-    private DatabaseReference medicineRef;
     private ValueEventListener valueEventListenerUser;
 
     @Override

@@ -51,18 +51,18 @@ public class UserRequestRegisterActivity extends AppCompatActivity {
     };
 
     private EditText fieldNameUd, fieldBirthDateUd,
-                        fieldCpfUd, fieldAdressUd, fieldPhoneUd, fieldMedicineUd;
+            fieldCpfUd, fieldAdressUd, fieldPhoneUd, fieldMedicineUd;
     private CircleImageView imageProfUd;
     private Button addImageProfUd;
     private Button chooseCamera;
     private Button chooseGallery;
-    private UserRequest userData;
+    private UserRequest userRequest;
     private Uri urlImage;
     private String userId;
 
     private FirebaseAuth authentication;
     private StorageReference storageReference;
-    private DatabaseReference userDataRef;
+    private DatabaseReference userRequestRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,7 +162,7 @@ public class UserRequestRegisterActivity extends AppCompatActivity {
                     //Salvar imagem no firebase
                     StorageReference imagemRef = storageReference
                             .child("images")
-                            .child("userData")
+                            .child("userPhoto")
                             .child(userId + ".jpeg");
 
                     UploadTask uploadTask = imagemRef.putBytes( dadosImagem );
@@ -204,17 +204,17 @@ public class UserRequestRegisterActivity extends AppCompatActivity {
     //Register medicine
     public void registerMedicine(View view){
 
-        userData = new UserRequest();
-        userData.setName( fieldNameUd.getText().toString() );
-        userData.setBirthDate( fieldBirthDateUd.getText().toString() );
-        userData.setCpf( fieldCpfUd.getText().toString() );
-        userData.setAdress( fieldAdressUd.getText().toString() );
-        userData.setPhone( fieldPhoneUd.getText().toString() );
-        userData.setMedicine( fieldMedicineUd.getText().toString() );
+        userRequest = new UserRequest();
+        userRequest.setName( fieldNameUd.getText().toString() );
+        userRequest.setBirthDate( fieldBirthDateUd.getText().toString() );
+        userRequest.setCpf( fieldCpfUd.getText().toString() );
+        userRequest.setAdress( fieldAdressUd.getText().toString() );
+        userRequest.setPhone( fieldPhoneUd.getText().toString() );
+        userRequest.setMedicine( fieldMedicineUd.getText().toString() );
 
-        userData.setImageProfile( urlImage.toString());
+        userRequest.setImageProfile( urlImage.toString());
 
-        userData.registerUserRequest();
+        userRequest.registerUserRequest();
 
         Toast.makeText(UserRequestRegisterActivity.this,
                 "Cadastro efetuado com sucesso",
@@ -222,7 +222,7 @@ public class UserRequestRegisterActivity extends AppCompatActivity {
         finish();
     }
 
-    //Permissões galeria/camera
+    //Permissions from gallery/camera
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

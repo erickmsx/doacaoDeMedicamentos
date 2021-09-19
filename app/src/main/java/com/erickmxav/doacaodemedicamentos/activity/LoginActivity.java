@@ -2,9 +2,11 @@ package com.erickmxav.doacaodemedicamentos.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,11 +24,13 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private FirebaseAuth authentication;
+
     private EditText inputEmailLogin, inputPasswordLogin;
     private Button buttonLogin;
     private User user;
-    private FirebaseAuth authentication;
     private String adminLogin = "admin@gmail.com";
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +40,12 @@ public class LoginActivity extends AppCompatActivity {
         inputEmailLogin = findViewById(R.id.fieldEmailLogin);
         inputPasswordLogin = findViewById(R.id.fieldPasswordLogin);
         buttonLogin = findViewById(R.id.buttonLogin);
+        progressBar = findViewById(R.id.progressBar);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //Validation if the fields have been filled in
                 String textEmail = inputEmailLogin.getText().toString();
                 String textPassword = inputPasswordLogin.getText().toString();
 
@@ -83,11 +87,23 @@ public class LoginActivity extends AppCompatActivity {
 
                     if ( user.getEmail().contains(adminLogin)) {
 
-                        openAdminHome();
+                        progressBar.setVisibility(View.VISIBLE);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                openAdminHome();
+                            }
+                        },2000);
 
                     } else{
 
-                        openHome();
+                        progressBar.setVisibility(View.VISIBLE);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                openHome();
+                            }
+                        },2000);
                     }
 
                 } else {
@@ -128,6 +144,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
+
     public void openHome() {
         startActivity(new Intent(this, MainActivity.class));
         finish();

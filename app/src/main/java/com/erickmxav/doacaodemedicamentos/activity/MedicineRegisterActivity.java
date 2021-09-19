@@ -45,7 +45,7 @@ public class MedicineRegisterActivity extends AppCompatActivity {
     private TextView mTextView; //bottomsheet
     private static final int SELECTION_CAMERA  = 100;
     private static final int SELECTION_GALERY = 200;
-    private String[] permissoesNecessarias = new String[]{
+    private String[] NecessaryPermissions = new String[]{
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.CAMERA
     };
@@ -69,7 +69,7 @@ public class MedicineRegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register_medicine);
 
         //Validation permissions
-        Permission.validatePermissions(permissoesNecessarias, this, 1);
+        Permission.validatePermissions(NecessaryPermissions, this, 1);
         storageReference = FirebaseConfig.getFirebaseStorage();
         authentication = FirebaseConfig.getAuthenticationFirebase();
 
@@ -81,10 +81,6 @@ public class MedicineRegisterActivity extends AppCompatActivity {
         addImageMedicine = findViewById(R.id.addImageProfileUd);
         chooseCamera = findViewById(R.id.openCamera);
         chooseGallery = findViewById(R.id.openGallery);
-
-        //Recover user data
-        FirebaseUser user = UserFirebase.getActualUser();
-        Uri url = user.getPhotoUrl();
 
         Button buttonShow = addImageMedicine;
         buttonShow.setOnClickListener(new View.OnClickListener() {
@@ -149,18 +145,19 @@ public class MedicineRegisterActivity extends AppCompatActivity {
 
                     imageMedicine.setImageBitmap( imagem );
 
-                    //Recuperar dados da imagem para o firebase
+                    //Recover image data from firebase and convert to JPEG
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     imagem.compress(Bitmap.CompressFormat.JPEG, 70, baos );
                     byte[] dadosImagem = baos.toByteArray();
 
-                    //Salvar imagem no firebase
+                    //Save image on Firebase Storage
                     StorageReference imagemRef = storageReference
                             .child("images")
                             .child("medicines")
                             .child(userId + ".jpeg");
 
                     UploadTask uploadTask = imagemRef.putBytes( dadosImagem );
+
                     uploadTask.addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
@@ -169,6 +166,7 @@ public class MedicineRegisterActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        //Download the image from storage and convert to url
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
@@ -185,15 +183,12 @@ public class MedicineRegisterActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
                     });
-
                 }
 
             }catch (Exception e){
                 e.printStackTrace();
             }
-
         }
-
     }
 
     //Register medicine
@@ -213,7 +208,7 @@ public class MedicineRegisterActivity extends AppCompatActivity {
         finish();
     }
 
-    //Permissões galeria/camera
+    //Permissions from gallery/camera
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

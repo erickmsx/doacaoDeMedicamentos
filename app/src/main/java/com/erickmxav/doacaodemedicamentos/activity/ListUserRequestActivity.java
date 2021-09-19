@@ -28,12 +28,12 @@ public class ListUserRequestActivity extends AppCompatActivity {
     private FirebaseAuth authentication = FirebaseConfig.getAuthenticationFirebase();
     private DatabaseReference firebaseRef = FirebaseConfig.getFirebaseDatabase();
     private DatabaseReference userRef;
+    private DatabaseReference userRequestRef;
 
     private RecyclerView recyclerListUserRequests;
     private AdapterUserRequest adapter;
     private List<UserRequest> usersRequestList = new ArrayList<>();
     private UserRequest userRequest;
-    private DatabaseReference userRequestRef;
     private ValueEventListener valueEventListenerUser;
 
     @Override
