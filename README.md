@@ -1,5 +1,7 @@
 # Doação de Medicamentos
 
+Status: Developing ⚠️
+
 ## The App 💡
 
 A simple Android App of hospitals medicines donation.
