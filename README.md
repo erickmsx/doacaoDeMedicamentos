@@ -22,7 +22,7 @@ Download all files and load into Android Studio  2020.3 version
 
 * Login with previous setted email and password administrator 
 * Register new medicines donation
-* See the list of people requests donation
+* See the donation requests list
 
 ## For the common user: 👨👩
 
@@ -33,7 +33,7 @@ Download all files and load into Android Studio  2020.3 version
 
 ## Resources
 * The App was made in Android Studio supported for Java
-* The authentication and user data register were made utilizing <a href="https://firebase.google.com//">Firebase</a>
+* Authentication and user data register were made utilizing <a href="https://firebase.google.com//">Firebase</a>
 * For listing the medicines and requests was utilized RecyclerView
 * All project based in object oriented programming
 
