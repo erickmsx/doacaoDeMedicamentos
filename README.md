@@ -2,7 +2,7 @@
 
 ## The App 💡
 
-A simple Android App of hospitals medicines donation
+A simple Android App of hospitals medicines donation.
 
 With the pacients leftover medicines from the hospital where my girlfriend works
 came the idea of creating an App where people can receive this medicines donation 
@@ -22,13 +22,13 @@ from the pacients who don't need this medications anymore.
 
 * People who need the donation can register in the app
 * Login with email and password
-*See the medicine donations list avaliable
-Send to the hospital a request donation of a medicine that are avaliable in the previous list
+* See the medicine donations list avaliable
+* Send to the hospital a request donation of a medicine that are avaliable in the previous list
 
 ## Resources
 * The App was made in Android Studio supported for Java
-* The authentication and user data register were made utilizing Firebase https://firebase.google.com/
-* For listing the pets was utilized RecyclerView
+* The authentication and user data register were made utilizing <a href="https://firebase.google.com//">Firebase</a>
+* For listing the medicine and requests was utilized RecyclerView
 * All project based in object oriented programming
 
 ## Author
