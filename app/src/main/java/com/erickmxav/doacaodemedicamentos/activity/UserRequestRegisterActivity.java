@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -59,6 +60,7 @@ public class UserRequestRegisterActivity extends AppCompatActivity {
     private UserRequest userRequest;
     private Uri urlImage;
     private String userId;
+    private ProgressDialog progressDialog;
 
     private FirebaseAuth authentication;
     private StorageReference storageReference;
@@ -152,6 +154,14 @@ public class UserRequestRegisterActivity extends AppCompatActivity {
 
                 if ( imagem != null ){
 
+                    progressDialog = new ProgressDialog(UserRequestRegisterActivity.this);
+                    progressDialog.show();
+                    progressDialog.setContentView(R.layout.custom_dialog);
+                    progressDialog.getWindow().setBackgroundDrawableResource(
+                            android.R.color.transparent
+                    );
+                    progressDialog.setCancelable(false);
+
                     imageProfUd.setImageBitmap( imagem );
 
                     //Recuperar dados da imagem para o firebase
@@ -182,12 +192,9 @@ public class UserRequestRegisterActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Uri> task) {
                                     Uri url = task.getResult();
                                     urlImage = url;
+                                    progressDialog.dismiss();
                                 }
                             });
-
-                            Toast.makeText(UserRequestRegisterActivity.this,
-                                    "Sucesso ao fazer upload da imagem",
-                                    Toast.LENGTH_SHORT).show();
                         }
                     });
 
