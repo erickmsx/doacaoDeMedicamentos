@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/drawable/background.xml" value="0.1953125" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/drawable/bg_round.xml" value="0.1953125" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/drawable/bottom_sheet_background.xml" value="0.1953125" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/drawable/button.xml" value="0.1953125" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/drawable/container_components.xml" value="0.1953125" />
@@ -29,6 +30,7 @@
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/activity_users_request_list.xml" value="0.13134057971014493" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/adapter_medicine.xml" value="0.22" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/adapter_user_request.xml" value="0.22" />
+        <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/custom_dialog.xml" value="0.1" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.21" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Curso/DoacaoDeMedicamentos/app/src/main/res/menu/main_menu.xml" value="0.17916666666666667" />

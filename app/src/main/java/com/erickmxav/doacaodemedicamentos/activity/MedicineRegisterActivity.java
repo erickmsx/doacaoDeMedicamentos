@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -58,6 +59,7 @@ public class MedicineRegisterActivity extends AppCompatActivity {
     private Medicine medicine;
     private Uri urlImage;
     private String userId;
+    private ProgressDialog progressDialog;
 
     private FirebaseAuth authentication;
     private StorageReference storageReference;
@@ -143,6 +145,14 @@ public class MedicineRegisterActivity extends AppCompatActivity {
 
                 if ( imagem != null ){
 
+                    progressDialog = new ProgressDialog(MedicineRegisterActivity.this);
+                    progressDialog.show();
+                    progressDialog.setContentView(R.layout.custom_dialog);
+                    progressDialog.getWindow().setBackgroundDrawableResource(
+                            android.R.color.transparent
+                    );
+                    progressDialog.setCancelable(false);
+
                     imageMedicine.setImageBitmap( imagem );
 
                     //Recover image data from firebase and convert to JPEG
@@ -175,12 +185,9 @@ public class MedicineRegisterActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Uri> task) {
                                     Uri url = task.getResult();
                                     urlImage = url;
+                                    progressDialog.dismiss();
                                 }
                             });
-
-                            Toast.makeText(MedicineRegisterActivity.this,
-                                    "Sucesso ao fazer upload da imagem",
-                                    Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
